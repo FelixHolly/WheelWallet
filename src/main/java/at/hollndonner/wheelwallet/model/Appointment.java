@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -16,18 +17,14 @@ public class Appointment {
     @ManyToOne
     @JoinColumn(name = "car_id")
     private Car car;
-    @Column(name = "total_distance")
-    private Long totalDistance;
-    @Column(name = "start_date")
-    private LocalDateTime startDate;
-    @Column(name = "end_date")
-    private LocalDateTime endDate;
-    @Column(name = "start_location")
-    private String startLocation;
-    @Column(name = "end_location")
-    private String endLocation;
+
+    @Column(name = "date")
+    private LocalDateTime date;
+    @Column(name = "type")
+    private String type;
     @Column(name = "notes")
     private String notes;
+
 
     // Constructors, getters, and setters
 }
