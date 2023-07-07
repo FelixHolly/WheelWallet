@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
+@Table(name = "Appointments")
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +18,6 @@ public class Appointment {
     @ManyToOne
     @JoinColumn(name = "car_id")
     private Car car;
-
     @Column(name = "date")
     private LocalDateTime date;
     @Column(name = "type")
